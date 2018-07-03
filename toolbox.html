@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript WA120
+	  Capstone Project
+      Author: Brandon Artura 
+      Date:   7/3/18
+
+      Filename: toolbox.htm
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>JavaScript Toolbox</title>
+   <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+   <header>
+      <h1>
+         JavaScript ToolBox
+      </h1>
+   </header>
+
+   <article>
+      <div id="results">
+          <ul>
+             <li id="item1"></li>
+             <li id="item2"></li>
+             <li id="item3"></li>
+             <li id="item4"></li>
+             <li id="item5"></li>
+          </ul>
+          <p id="resultsFin"></p>
+      </div>
+      <form>
+          <fieldset>
+            <label for="toolBox" id="placeLabel">
+              Type the name of a tool, then click Submit:
+            </label>
+            <input type="text" id="toolBox" />
+          </fieldset>
+          <fieldset>
+            <button type="button" id="button"
+            onclick="processInput()">Submit</button> <!--adds event listener to button-->
+          </fieldset>
+      </form>
+
+<script>
+    var i=1;
+    var listItem = "";
+    function processInput(){
+        var tool = document.getElementById("toolBox").value;
+        document.getElementById("toolBox").value = "";
+        
+        if(i==5){
+            document.getElementById("resultsFin").innerHTML = "Thanks for your suggestions";
+            
+            document.getElementById("item"+ i ).innerHTML = tool;
+        }else{
+            document.getElementById("item"+ i).innerHTML = tool;
+            i++;
+        }
+    }
+    
+</script>
+
+
+     </article>
+   
+</body>
+</html>
